@@ -1,0 +1,249 @@
+php-defaults (35ubuntu6) xenial; urgency=medium
+
+  * Adjust versioned breaks for php-radius.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Mon, 04 Apr 2016 23:09:11 -0700
+
+php-defaults (35ubuntu5) xenial; urgency=medium
+
+  * Adjust versioned breaks for php-mongodb.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Wed, 16 Mar 2016 18:38:32 -0700
+
+php-defaults (35ubuntu4) xenial; urgency=medium
+
+  * Adjust versioned breaks for php-zmq as well, based on the actual version
+    built for php7 in Ubuntu.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Tue, 15 Mar 2016 20:12:18 -0700
+
+php-defaults (35ubuntu3) xenial; urgency=medium
+
+  * Adjust versioned breaks for php-imagick as well.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Mon, 14 Mar 2016 21:00:54 -0700
+
+php-defaults (35ubuntu2) xenial; urgency=medium
+
+  * Update to Ubuntu version of hard dependencies, which have been or
+    will be rebuilt for PHP7.0 (LP: #1553419). 
+
+ -- Nishanth Aravamudan <nish.aravamudan@canonical.com>  Mon, 14 Mar 2016 18:06:09 -0700
+
+php-defaults (35) unstable; urgency=medium
+
+  * Simplify the package versions to use only SUPPORTED_VERSION for common
+    packages and DEB_VERSION for php-common and php-all-dev to be able to
+    update mixed versions
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 01 Mar 2016 16:28:34 +0100
+
+php-defaults (34) unstable; urgency=medium
+
+  * Just little fix here and there
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 01 Mar 2016 12:08:28 +0100
+
+php-defaults (33) unstable; urgency=medium
+
+  * Create independent mods-available directory for each PHP version
+  * php-common needs to have different version then the rest of the
+    packages, so it's just $(DEB_EPOCH):$(DEB_VERSION) and it doesn't
+    include supported PHP versions
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 29 Feb 2016 09:45:39 +0100
+
+php-defaults (32) unstable; urgency=medium
+
+  * Bump epoch to 1, so the new version number is higher than the old one
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 23 Feb 2016 20:47:04 +0100
+
+php-defaults (31) unstable; urgency=medium
+
+  * Generate package version numbers from PHP supported versions and
+    changelog version
+  * Remove php-dbg package
+  * Bump standards version to 3.9.7 (no change)
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 23 Feb 2016 20:25:43 +0100
+
+php-defaults (30) unstable; urgency=medium
+
+  * Regenerate d/control
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 23 Feb 2016 18:41:09 +0100
+
+php-defaults (29) unstable; urgency=medium
+
+  * Update modulelist to match the new extension packages
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 23 Feb 2016 10:12:44 +0100
+
+php-defaults (28) unstable; urgency=medium
+
+  * php-all-dev needs to pull phpX.Y-json packages in addition to phpX.Y-dev
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 18 Feb 2016 16:39:48 +0100
+
+php-defaults (27) unstable; urgency=medium
+
+  * Add php-fpm default package
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 15 Feb 2016 11:40:38 +0100
+
+php-defaults (26) unstable; urgency=medium
+
+  [ Tugdual Saunier ]
+  * Fix priorities handling in php-helper
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 04 Feb 2016 14:16:34 +0100
+
+php-defaults (25) unstable; urgency=medium
+
+  * Supress dpkg-statoverride --list output (Closes: #812983)
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 02 Feb 2016 11:17:14 +0100
+
+php-defaults (24) unstable; urgency=medium
+
+  * Make -v ALL -s ALL default if -v or -s was not specified
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 26 Jan 2016 12:37:20 +0100
+
+php-defaults (23) unstable; urgency=medium
+
+  * Add CLI to list of supported SAPIS in sessionclean script
+  * Fix versioned binaries' names that sessionclean script checks
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 08 Jan 2016 10:08:32 +0100
+
+php-defaults (22) unstable; urgency=medium
+
+  * Fix php-dev description (Closes: #809725)
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 04 Jan 2016 11:45:29 +0100
+
+php-defaults (21) unstable; urgency=medium
+
+  * Remove automatic (de-)registration of modules on '-s ALL'
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 29 Dec 2015 18:06:26 +0100
+
+php-defaults (20) unstable; urgency=medium
+
+  * Fix typo in enchant modules name
+  * Add d/control to .PHONY rules, so we can always regenerate it
+  * Fix double php-dev package in d/control.in
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 29 Dec 2015 16:19:25 +0100
+
+php-defaults (19) unstable; urgency=medium
+
+  * Add default php-dbg package to complete the set of the dependency
+    packages
+  * Add Enchant, GMP and XSL default dependency packages
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 29 Dec 2015 14:22:09 +0100
+
+php-defaults (18) unstable; urgency=medium
+
+  * Fix a -dev package generation (missing coma)
+  * Fix permissions on /var/lib/php/sessions from php-common package
+    (Closes: #807164)
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 21 Dec 2015 11:03:38 +0100
+
+php-defaults (17) unstable; urgency=medium
+
+  * Add PHP_SUPPORTED_VERSIONS to d/rules
+  * Only one version (7.0) is supported under normal conditions
+  * Update modulelist to up-to-date list of internal modules
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 18 Dec 2015 09:33:43 +0100
+
+php-defaults (16) unstable; urgency=medium
+
+  * Replace @PHP_VERSION@ in debian/control generated from
+    php-module.control.in (Closes: #807386)
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 08 Dec 2015 16:47:59 +0100
+
+php-defaults (15) unstable; urgency=medium
+
+  [ Jan Wagner ]
+  * Adding 'PHP_INI_SCAN_DIR=/etc/php/${version}/${conf_dir}/conf.d/' to
+    session cleanup script when calling php
+
+  [ Ondřej Surý ]
+  * Upload to unstable
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 04 Dec 2015 12:09:32 +0100
+
+php-defaults (14) experimental; urgency=medium
+
+  * Fix missing field in d/copyright
+  * Update d/control
+  * Don't generate php-json, php-interbase and php-opcache (yet)
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 26 Nov 2015 15:20:27 +0100
+
+php-defaults (13) experimental; urgency=medium
+
+  * Add meta packages for all modules
+  * Bump a version to one higher than src:php-modules
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 26 Nov 2015 15:12:33 +0100
+
+php-defaults (10) experimental; urgency=medium
+
+  * Get rid of php5 -> replace with php${version}
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 26 Nov 2015 15:10:04 +0100
+
+php-defaults (9) unstable; urgency=medium
+
+  * Update copyright on everything to match the Expat license
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 25 Aug 2015 15:37:07 +0200
+
+php-defaults (8) unstable; urgency=medium
+
+  * Add missing phpdbg SAPI to php-maintscript-helper script
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 03 Aug 2015 13:28:49 +0200
+
+php-defaults (7) unstable; urgency=medium
+
+  * Autogenerate debian/control with default PHP version from debian/rules
+  * Move the session dir to php-common package
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 30 Jul 2015 11:22:30 +0200
+
+php-defaults (6) unstable; urgency=medium
+
+  * Fix the location of live link
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 30 Jul 2015 10:08:58 +0200
+
+php-defaults (5) unstable; urgency=medium
+
+  * Move the dependencies from phpX.Y-common to php-common
+  * We can get rid of lsof since we don't use it anymore
+  * Add ${misc:Depends} and wrap-and-sort -ab files
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 30 Jul 2015 08:45:59 +0200
+
+php-defaults (4) unstable; urgency=medium
+
+  * Add a mandatory /etc/php/mods-available directory
+  * Purge /var/lib/php on php-common removal
+
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 29 Jul 2015 11:27:18 +0200
+
+php-defaults (3) unstable; urgency=medium
+
+  * Initial php-defaults package
+  * Move the mods-available directory directly under /etc/php
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 28 Jul 2015 15:00:58 +0200
