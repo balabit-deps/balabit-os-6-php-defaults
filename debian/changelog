@@ -1,3 +1,11 @@
+php-defaults (35ubuntu6.1) xenial; urgency=medium
+
+  * phpquery: Don't lose status from check_mod() (Closes #834189).
+    - Backport from 44.
+    - LP: #1699659.
+
+ -- Nishanth Aravamudan <nish.aravamudan@canonical.com>  Thu, 22 Jun 2017 08:47:57 -0700
+
 php-defaults (35ubuntu6) xenial; urgency=medium
 
   * Adjust versioned breaks for php-radius.
